@@ -15,4 +15,12 @@ let gakka = [
 ];
 
 //////////////// ここから下にプログラムを書きたそう!
+campus.address;
 
+for (let room of campus.buildingD) {
+  console.log(room);
+}
+
+for (let n of gakka) {
+  console.log(n.name);
+} 
