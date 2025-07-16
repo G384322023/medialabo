@@ -11,9 +11,54 @@ console.log('風速:' + data.wind.speed);
 console.log('風向:' + data.wind.deg);
 console.log('都市名:' + data.name);
 }
-// 課題5-1 の関数 printDom() はここに記述すること
-function printDom(data) {
 
+function printDom(data) {
+  let a = document.querySelector('#result');
+
+
+  let div = document.createElement('div');
+  div.id = 'result';
+  document.body.appendChild(div);
+  let ul = document.createElement('ul');
+  div.appendChild(ul);
+
+  let li; 
+
+  li = document.createElement('li');
+  li.textContent = '経度: ' + data.coord.lon;
+  ul.appendChild(li);
+
+  li = document.createElement('li');
+  li.textContent = '緯度: ' + data.coord.lat;
+  ul.appendChild(li);
+
+  li = document.createElement('li');
+  li.textContent = '天気: ' + data.weather[0].description;
+  ul.appendChild(li);
+
+  li = document.createElement('li');
+  li.textContent = '最低気温: ' + data.main.temp_min;
+  ul.appendChild(li);
+
+  li = document.createElement('li');
+  li.textContent = '最高気温: ' + data.main.temp_max;
+  ul.appendChild(li);
+
+  li = document.createElement('li');
+  li.textContent = '湿度: ' + data.main.humidity;
+  ul.appendChild(li);
+
+  li = document.createElement('li');
+  li.textContent = '風速: ' + data.wind.speed;
+  ul.appendChild(li);
+
+  li = document.createElement('li');
+  li.textContent = '風向: ' + data.wind.deg;
+  ul.appendChild(li);
+
+  li = document.createElement('li');
+  li.textContent = '都市名: ' + data.name;
+  ul.appendChild(li);
 }
 
 // 課題6-1 のイベントハンドラ登録処理は以下に記述

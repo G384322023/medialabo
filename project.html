@@ -3,26 +3,17 @@
     <head>
         <meta charset="utf-8">
         <title>世界の天気</title>
-         <link rel="stylesheet" href="ProjectStyle.css">
-            <script src="weather.js" defer></script>
+        <link rel="stylesheet" href="ProjectStyle.css">
+        <script src="weather.js" defer></script>
     </head>
     <body>
         <h1>世界の天気</h1>
         <h3>以下の地域の天候に関する情報を検索して表示します。</h3>
-        <div class="flex-box">
-        <ul>
-            <li>経度: 116.3972</li>
-            <li>緯度: 39.9075</li>
-            <li>天気: 曇りがち</li>
-            <li>最低気温: 9.94</li>
-            <li>最高気温: 9.94</li>
-            <li>湿度: 14</li>
-            <li>風速: 2.65</li>
-            <li>風向: 197</li>
-            <li>都市名: 北京市</li>
-        </ul>
-        <img src = "practicehtml/tennki-illust6.png">
-        </div>
+       
 
+        <h3>都市を検索</h3>
+        <label for="city-input">都市名:</label>
+        <input type="text" name="city" id="city-input" size="15">
+        <button id="search-button">検索</button>
     </body>
 </html>
