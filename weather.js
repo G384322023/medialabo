@@ -58,14 +58,21 @@ function printDom(data) {
   li = document.createElement('li');
   li.textContent = '都市名: ' + data.name;
   ul.appendChild(li);
+
+  var ido = data.coord.lat;  
+  var keido = data.coord.lon; 
+
+  var mapUrl = 'https://www.google.co.jp/maps/@' + ido + ',' + keido + ',8z';
+  var map = document.createElement('a');
+  map.href = mapUrl; 
+  map.textContent = data.name + ' ってどこ？'; 
+  div.appendChild(map); 
 }
 
 // 課題6-1 のイベントハンドラ登録処理は以下に記述
-
 document.querySelector('#search-button').addEventListener('click', sendRequest);
 
 // 課題6-1 のイベントハンドラ sendRequest() の定義
-
 function sendRequest() {
   let key = document.querySelector('#city').value;
   let url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/' + key + '.json';
@@ -75,29 +82,20 @@ function sendRequest() {
     .catch(showError)
     .then(finish);
 }
-
-
-
-
 // 課題6-1: 通信が成功した時の処理は以下に記述
 function showResult(resp) {
   let data = resp.data;
   if(typeof data === 'string'){
     data = JSON.parse(data);
   }
-
   printDom(data);
-
   console.log(data);
-
   console.log(data.x);
 }
-
 // 課題6-1: 通信エラーが発生した時の処理
 function showError(err) {
     console.log(err);
 }
-
 // 課題6-1: 通信の最後にいつも実行する処理
 function finish() {
     console.log('Ajax 通信が終わりました');
