@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>世界の天気</title>
-        <link rel="stylesheet" href="ProjectStyle.css">
-        <script src="weather.js" defer></script>
-    </head>
-    <body>
-        <h1>世界の天気</h1>
-        <h3>以下の地域の天候に関する情報を検索して表示します。</h3>
-       
+<head>
+    <meta charset="utf-8">
+    <title>世界の天気</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+    <link rel="stylesheet" href="ProjectStyle.css">
+    <script src="weather.js" defer></script>
+</head>
+<body>
+    <h1>世界の天気</h1>
+    <h3>以下の地域の天候に関する情報を検索して表示します。</h3>
 
-        <h3>都市を検索</h3>
-        <label for="city-input">都市名:</label>
-        <input type="text" name="city" id="city-input" size="15">
-        <button id="search-button">検索</button>
-    </body>
+    <h3>都市を検索</h3>
+    <label for="city-input">都市id:</label>
+    <input type="text" name="city" id="city" size="15">
+    <button id="search-button">検索</button>
+
+    <div id="weather-results"></div>
+</body>
 </html>
